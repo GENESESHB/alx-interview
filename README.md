@@ -97,6 +97,6 @@ This project was done by [SE. Moses Mwangi](https://github.com/MosesSoftEng). Fe
 
 :iphone: WhatsApp [+212622283559](https://wa.me/+212622283559)
 
-:email: Email [hassan.hbmama@gmail.com](hassan.hbmama@gmail.com)
+:email: Email [hassan.hbmama@gmail.com](mailto:hassan.hbmama@gmail.com)
 
 :thumbsup: A lot of thanks to [ALX-Africa Software Engineering](https://www.alxafrica.com/) program for the project requirements.
