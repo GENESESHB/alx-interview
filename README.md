@@ -93,7 +93,7 @@ cd ./0x09-island_perimeter
 <!---->
 
 # :man: Author and Credits.
-This project was done by [SE. Moses Mwangi](https://github.com/MosesSoftEng). Feel free to get intouch with me;
+This project was done by [SE. Moses Mwangi](https://github.com/GENESES). Feel free to get intouch with me;
 
 :iphone: WhatsApp [+212622283559](https://wa.me/+212622283559)
 
