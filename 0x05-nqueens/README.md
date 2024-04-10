@@ -61,3 +61,113 @@ julien@ubuntu:~/0x08. N Queens$
 -   GitHub repository: `alx-interview`
 -   Directory: `0x05-nqueens`
 -   File: `0-nqueens.py`
+
+
+# task:
+1. **Shebang Line**: This line specifies the interpreter to be used for running the script.
+
+```python
+#!/usr/bin/python3
+```
+
+2. **Docstring**: This triple-quote string provides documentation for the script. It describes what the script does.
+
+```python
+"""N Queens"""
+```
+
+3. **Imports**: The script imports the `sys` module. This module provides access to some variables used or maintained by the Python interpreter and to functions that interact strongly with the interpreter. 
+
+```python
+import sys
+```
+
+4. **Function Definitions**:
+   
+   a. `print_board`: This function prints the positions allocated to the queen on the chessboard.
+
+   ```python
+   def print_board(board, n):
+       """Print allocated positions to the queen"""
+       b = []
+
+       for i in range(n):
+           for j in range(n):
+               if j == board[i]:
+                   b.append([i, j])
+       print(b)
+   ```
+   
+   b. `is_position_safe`: This function checks if the position is safe for the queen.
+
+   ```python
+   def is_position_safe(board, i, j, r):
+       """Checks if the position is safe for the queen"""
+       return board[i] in (j, j - i + r, i - r + j)
+   ```
+   
+   c. `safe_positions`: This function finds all safe positions where the queen can be allocated.
+
+   ```python
+   def safe_positions(board, row, n):
+       """Find all safe positions where the queen can be allocated"""
+       if row == n:
+           print_board(board, n)
+       else:
+           for j in range(n):
+               allowed = True
+               for i in range(row):
+                   if is_position_safe(board, i, j, row):
+                       allowed = False
+               if allowed:
+                   board[row] = j
+                   safe_positions(board, row + 1, n)
+   ```
+   
+   d. `create_board`: This function generates the board.
+
+   ```python
+   def create_board(size):
+       """Generates the board"""
+       return [0 * size for i in range(size)]
+   ```
+
+5. **Input Validation**:
+   
+   a. The script checks if the command-line arguments are valid.
+
+   ```python
+   if len(sys.argv) != 2:
+       print("Usage: nqueens N")
+       exit(1)
+   ```
+   
+   b. It tries to parse the input argument as an integer.
+
+   ```python
+   try:
+       n = int(sys.argv[1])
+   except BaseException:
+       print("N must be a number")
+       exit(1)
+   ```
+
+   c. It checks if the value of `n` is at least 4.
+
+   ```python
+   if (n < 4):
+       print("N must be at least 4")
+       exit(1)
+   ```
+
+6. **Board Initialization and Function Call**:
+   
+   The script initializes the board and calls the `safe_positions` function with the initial row and board size as parameters.
+
+   ```python
+   board = create_board(int(n))
+   row = 0
+   safe_positions(board, row, int(n))
+   ```
+
+This script essentially solves the N Queens problem, which is to place N chess queens on an N×N chessboard so that no two queens threaten each other. It recursively finds all possible placements of queens on the board where they do not threaten each other.
