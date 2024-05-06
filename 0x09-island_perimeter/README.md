@@ -1,7 +1,7 @@
-#!0x09-island_perimeter
+# 0x09-island_perimeter
 ![island](https://i.ytimg.com/vi/U9wr3eD3okc/maxresdefault.jpg)
 
-#island🏝  🏝 🏝 🏝 🏝 🏝
+# island🏝  🏝 🏝 🏝 🏝 🏝
 
 ```python
 for i, row in enumerate(grid):
